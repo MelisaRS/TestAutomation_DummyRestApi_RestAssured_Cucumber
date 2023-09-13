@@ -33,6 +33,12 @@ Feature: Employees endpoint
       | Carlos | 4000 | 28 |
     And I verify the message that says "Successfully! Record has been updated."
 
-  
+  @delete
+  Scenario: /delete should return an employee delete with specific id
+    Given I perform a Delete with specific id equal "10" to the employee endpoint
+    Then I verify status code 200 is returned
+    And I verify number data deleted equal to "10"
+    And I verify the message that says "Successfully! Record has been deleted"
+
 
 

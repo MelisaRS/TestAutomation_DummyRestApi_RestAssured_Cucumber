@@ -104,4 +104,15 @@ public class EmployeesSteps {
 
     }
 
+    @Given("I perform a Delete with specific id equal {string} to the employee endpoint")
+    public void deleteEmployee(String id){
+        response = Request.delete(EmployeeEndpoints.DELETE_EMPLOYEE, id);
+
+    }
+
+    @And("I verify number data deleted equal to {string}")
+    public void verifyNumberDataDeleted(String id){
+        response.then().assertThat().body("data", Matchers.equalTo(id));
+    }
+
 }

@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">sep. 13, 2023 11:56:39 a. m.</span></a>
+<a href="#"><span class="badge badge-primary">sep. 13, 2023 12:16:44 p. m.</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@put</a>
+<a class="dropdown-item" href="#">@delete</a>
 </ul>
 </li>
 </ul>
@@ -92,7 +92,7 @@
           <div class="test-detail">
             <p class="name">Employees endpoint</p>
             <p class="text-sm">
-              <span>11:56:40</span> / <span>00:00:03:641</span>
+              <span>12:16:45</span> / <span>00:00:05:362</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -101,9 +101,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Employees endpoint</h5>
-<span class='badge badge-success'>09.13.2023 11:56:40</span>
-<span class='badge badge-danger'>09.13.2023 11:56:44</span>
-<span class='badge badge-default'>00:00:03:641</span>
+<span class='badge badge-success'>09.13.2023 12:16:45</span>
+<span class='badge badge-danger'>09.13.2023 12:16:50</span>
+<span class='badge badge-default'>00:00:05:362</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,15 +115,13 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>/update should return an employee update with specific id</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>/delete should return an employee delete with specific id</div>
       </div>
     </div>
         <div class="collapse">
           <div class="card-body">
-              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.putEmployee(java.lang.String,io.cucumber.datatable.DataTable)">
-                <span>Given I perform a PUT to the update endpoint with the following date and id "2"</span>
-      <div><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table>
-      </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.deleteEmployee(java.lang.String)">
+                <span>Given I perform a Delete with specific id equal "10" to the employee endpoint</span>
       <div>
       </div>
               </div>
@@ -132,15 +130,13 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyEmployeeResponseData(io.cucumber.datatable.DataTable)">
-                <span>And I verify the following data in the body response</span>
-      <div><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table>
-      </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyNumberDataDeleted(java.lang.String)">
+                <span>And I verify number data deleted equal to "10"</span>
       <div>
       </div>
               </div>
               <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String)">
-                <span>And I verify the message that says "Successfully! Record has been updated."</span>
+                <span>And I verify the message that says "Successfully! Record has been deleted"</span>
       <div>
       </div>
               </div>
@@ -172,12 +168,12 @@
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@put</p>
+<p class="name">@delete</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@put</h4>
+<h4>@delete</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -191,11 +187,11 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:56:40 a. m.</td>
+<td>12:16:45 p. m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>/update should return an employee update with specific id</a>
+<a href="#" class="linked" test-id='1' id='2'>/delete should return an employee delete with specific id</a>
 <div class="">
-<span class="badge badge-default">Employees endpoint./update should return an employee update with specific id</span>
+<span class="badge badge-default">Employees endpoint./delete should return an employee delete with specific id</span>
 </div>
 </td>
 </tr>
@@ -216,13 +212,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>sep. 13, 2023 11:56:39 a. m.</h3>
+<h3>sep. 13, 2023 12:16:44 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>sep. 13, 2023 11:56:44 a. m.</h3>
+<h3>sep. 13, 2023 12:16:50 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -312,7 +308,7 @@
 </div></div>
 <script>
 var timeline = {
-"Employees endpoint":3.641
+"Employees endpoint":5.362
 };
 </script>
 <div class="row">
@@ -322,7 +318,7 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@put</td>
+<td>@delete</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/",
         glue = {"stepDefinitions"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@put"
+        tags = "@delete"
 )
 
 public class TestRunner {
