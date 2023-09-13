@@ -8,6 +8,7 @@ import entities.Employee;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en_scouse.An;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import utils.Request;
@@ -79,6 +80,28 @@ public class EmployeesSteps {
     @And("I verify the message that says {string}")
     public void verifyMessageInBody(String message){
         response.then().assertThat().body("message", Matchers.equalTo(message));
+    }
+
+    @And("I perform a PUT to the update endpoint with the following date and id {string}")
+    public void putEmployee(String id, DataTable employeeInfo) throws JsonProcessingException {
+
+        List<String> data = employeeInfo.transpose().asList(String.class);
+
+        Employee employee = new Employee();
+        employee.setName(data.get(0));
+        employee.setSalary(data.get(1));
+        employee.setAge(data.get(2));
+
+        System.out.println(employee.getName());
+        System.out.println(employee.getSalary());
+        System.out.println(employee.getAge());
+
+        ObjectMapper mapper = new ObjectMapper();
+        String payload = mapper.writeValueAsString(employee);
+        //response.then().log().body();
+
+        response = Request.put(EmployeeEndpoints.PUT_EMPLOYEE, id, payload);
+
     }
 
 }

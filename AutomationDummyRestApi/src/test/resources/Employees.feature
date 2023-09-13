@@ -23,3 +23,16 @@ Feature: Employees endpoint
     And I verify the following data in the all body response
       | 1 | Tiger Nixon | 320800 | 61 |  |
     And I verify the message that says "Successfully! Record has been fetched."
+
+  @put
+  Scenario: /update should return an employee update with specific id
+    Given I perform a PUT to the update endpoint with the following date and id "2"
+      | Carlos | 4000 | 28 |
+    Then I verify status code 200 is returned
+    And I verify the following data in the body response
+      | Carlos | 4000 | 28 |
+    And I verify the message that says "Successfully! Record has been updated."
+
+  
+
+

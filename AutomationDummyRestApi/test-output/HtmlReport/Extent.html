@@ -49,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>sep. 13, 2023 04:02:45 a. m.</span>
+			<span class='label blue darken-3 suite-start-time'>sep. 13, 2023 11:56:39 a. m.</span>
 			</a>
 		</ul>
 	</div>
@@ -76,7 +76,7 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@getId</a></li>
+					<li><a href='#'>@put</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -187,7 +187,7 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Employees endpoint</span>
-						<span class='test-time'>sep. 13, 2023 04:02:45 a. m.</span>
+						<span class='test-time'>sep. 13, 2023 11:56:40 a. m.</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -200,21 +200,22 @@
 
 <div class='scenario node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 02.231</span>
+	<span class='duration right label'>00 00 03.634</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: /employee/id should return an employee with specific id</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: /update should return an employee update with specific id</div>
 	</div>
 	
 	
 		<div class='category-list'>
-				<span class='category label'>@getId</span>
+				<span class='category label'>@put</span>
 		</div>
 	
 	<ul class='steps'>
 		<li test-id='3' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.getWithIdEmployee(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I perform a Get with specific id equal "1" to the employee endpoint</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.putEmployee(java.lang.String,io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I perform a PUT to the update endpoint with the following date and id "2"</div>
 
 
+					<div class="node-step"><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table></div>
 		</li>
 		<li test-id='4' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyStatusCode(int))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then I verify status code 200 is returned</div>
@@ -222,13 +223,13 @@
 
 		</li>
 		<li test-id='5' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyBodyEmployeeResponse(io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the following data in the all body response</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyEmployeeResponseData(io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the following data in the body response</div>
 
 
-					<div class="node-step"><table class='markup-table table '><tr><td>1</td><td>Tiger Nixon</td><td>320800</td><td>61</td><td></td></tr></table></div>
+					<div class="node-step"><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table></div>
 		</li>
 		<li test-id='6' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the message that says "Successfully! Record has been fetched."</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the message that says "Successfully! Record has been updated."</div>
 
 
 		</li>
@@ -278,7 +279,7 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@getId</span>
+						<span class='category-name'>@put</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
 						</span>
@@ -300,8 +301,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>sep. 13, 2023 04:02:45 a. m.</td>
-										<td class='linked' test-id='2'>/employee/id should return an employee with specific id</td>
+										<td>sep. 13, 2023 11:56:40 a. m.</td>
+										<td class='linked' test-id='2'>/update should return an employee update with specific id</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -344,19 +345,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>sep. 13, 2023 04:02:45 a. m.</div>
+					<div class='panel-lead'>sep. 13, 2023 11:56:39 a. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>sep. 13, 2023 04:02:47 a. m.</div>
+			 		<div class='panel-lead'>sep. 13, 2023 11:56:44 a. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 02.733</div>
+					<div class='panel-lead'>00 00 04.416</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -372,7 +373,7 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@getId</td>
+							<td>@put</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -419,7 +420,7 @@
 		
 		<script>
 			var timeline = {
-			        "Employees endpoint":2.234
+			        "Employees endpoint":3.641
 			};
 		</script>
 		
