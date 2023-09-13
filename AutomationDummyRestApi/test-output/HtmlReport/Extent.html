@@ -49,7 +49,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>sep. 13, 2023 12:16:44 p. m.</span>
+			<span class='label blue darken-3 suite-start-time'>sep. 13, 2023 05:53:54 p. m.</span>
 			</a>
 		</ul>
 	</div>
@@ -76,7 +76,7 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@delete</a></li>
+					<li><a href='#'>@postValuesNulls</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -157,7 +157,7 @@
                 </div>
                 <div class='block text-small'>
                     <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>4</span> steps passed</span>
+                    <span class='strong'>5</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -187,7 +187,7 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Employees endpoint</span>
-						<span class='test-time'>sep. 13, 2023 12:16:45 p. m.</span>
+						<span class='test-time'>sep. 13, 2023 05:53:55 p. m.</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -200,21 +200,22 @@
 
 <div class='scenario node' test-id='2' status='pass'>
 
-	<span class='duration right label'>00 00 05.358</span>
+	<span class='duration right label'>00 00 02.473</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: /delete should return an employee delete with specific id</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: /create should not create an employee</div>
 	</div>
 	
 	
 		<div class='category-list'>
-				<span class='category label'>@delete</span>
+				<span class='category label'>@postValuesNulls</span>
 		</div>
 	
 	<ul class='steps'>
 		<li test-id='3' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.deleteEmployee(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I perform a Delete with specific id equal "10" to the employee endpoint</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.postEmployee(io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given I perform a POST to the create endpoint with the following data</div>
 
 
+					<div class="node-step"><table class='markup-table table '><tr><td></td><td></td><td></td></tr></table></div>
 		</li>
 		<li test-id='4' class='node then Pass' status='Pass'>
 			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyStatusCode(int))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then I verify status code 200 is returned</div>
@@ -222,12 +223,18 @@
 
 		</li>
 		<li test-id='5' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyNumberDataDeleted(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify number data deleted equal to "10"</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyResponseSize(int))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify that the body does not have size 0</div>
 
 
 		</li>
 		<li test-id='6' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the message that says "Successfully! Record has been deleted"</div>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyEmployeeResponseData(io.cucumber.datatable.DataTable))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the following data in the body response</div>
+
+
+					<div class="node-step"><table class='markup-table table '><tr><td></td><td></td><td></td></tr></table></div>
+		</li>
+		<li test-id='7' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And I verify the message that says "Successfully! Record has been added."</div>
 
 
 		</li>
@@ -277,7 +284,7 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@delete</span>
+						<span class='category-name'>@postValuesNulls</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
 						</span>
@@ -299,8 +306,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>sep. 13, 2023 12:16:45 p. m.</td>
-										<td class='linked' test-id='2'>/delete should return an employee delete with specific id</td>
+										<td>sep. 13, 2023 05:53:55 p. m.</td>
+										<td class='linked' test-id='2'>/create should not create an employee</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -337,25 +344,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>sep. 13, 2023 12:16:44 p. m.</div>
+					<div class='panel-lead'>sep. 13, 2023 05:53:54 p. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>sep. 13, 2023 12:16:50 p. m.</div>
+			 		<div class='panel-lead'>sep. 13, 2023 05:53:57 p. m.</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 06.026</div>
+					<div class='panel-lead'>00 00 02.982</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -371,7 +378,7 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@delete</td>
+							<td>@postValuesNulls</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -405,8 +412,8 @@
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 4,
-				passGrandChild: 4,
+				grandChildCount: 5,
+				passGrandChild: 5,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
@@ -418,7 +425,7 @@
 		
 		<script>
 			var timeline = {
-			        "Employees endpoint":5.362
+			        "Employees endpoint":2.475
 			};
 		</script>
 		

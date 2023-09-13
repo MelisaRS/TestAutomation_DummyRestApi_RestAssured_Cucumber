@@ -40,5 +40,21 @@ Feature: Employees endpoint
     And I verify number data deleted equal to "10"
     And I verify the message that says "Successfully! Record has been deleted"
 
+  @postValuesNulls
+  Scenario: /create should not create an employee
+    Given I perform a POST to the create endpoint with the following data
+      |  |  |  |
+    Then I verify status code 200 is returned
+    And I verify that the body does not have size 0
+    And I verify the following data in the body response
+      |  |  |  |
+    And I verify the message that says "Successfully! Record has been added."
+
+
+    #| 12345.6789 | salario | {} |
+    #Then I verify status code 400 is returned
+    #And I verify that the body have size 0
+    #And I verify that the body contain only id
+    #And I verify the message that says "Missing required fields: nombre, salario, edad."
 
 
