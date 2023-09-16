@@ -22,6 +22,7 @@ public class EmployeesSteps {
     Response response;
     @Given("I perform a GET to the employees endpoint")
     public void getEmployees(){
+
         response = Request.get(EmployeeEndpoints.GET_EMPLOYEES);
     }
 
@@ -37,7 +38,8 @@ public class EmployeesSteps {
     // I perform a POST to the create endpoint with the following data
 
     @And("I perform a POST to the create endpoint with the following data")
-    public void postEmployee(DataTable employeeInfo) throws JsonProcessingException {
+    public void postEmployee(DataTable employeeInfo) throws JsonProcessingException, InterruptedException {
+        Thread.sleep(60000);
         List<String> data = employeeInfo.transpose().asList(String.class);
 
         Employee employee = new Employee();
@@ -59,9 +61,10 @@ public class EmployeesSteps {
         response.then().assertThat().body("data.age", Matchers.equalTo(data.get(2)));
 
     }
-
+////////////////////////////////////////////////////////////////////////
     @Given("I perform a Get with specific id equal {string} to the employee endpoint")
-    public void getWithIdEmployee(String getID){
+    public void getWithIdEmployee(String getID) throws InterruptedException {
+        Thread.sleep(60000);
         response = Request.getWithId(EmployeeEndpoints.GET_EMPLOYEE,getID);
     }
 
@@ -83,7 +86,8 @@ public class EmployeesSteps {
     }
 
     @And("I perform a PUT to the update endpoint with the following date and id {string}")
-    public void putEmployee(String id, DataTable employeeInfo) throws JsonProcessingException {
+    public void putEmployee(String id, DataTable employeeInfo) throws JsonProcessingException, InterruptedException {
+        Thread.sleep(60000);
 
         List<String> data = employeeInfo.transpose().asList(String.class);
 
@@ -105,7 +109,8 @@ public class EmployeesSteps {
     }
 
     @Given("I perform a Delete with specific id equal {string} to the employee endpoint")
-    public void deleteEmployee(String id){
+    public void deleteEmployee(String id) throws InterruptedException {
+        Thread.sleep(60000);
         response = Request.delete(EmployeeEndpoints.DELETE_EMPLOYEE, id);
 
     }

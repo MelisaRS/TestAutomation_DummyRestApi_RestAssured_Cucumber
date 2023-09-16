@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">sep. 13, 2023 05:53:54 p. m.</span></a>
+<a href="#"><span class="badge badge-primary">sep. 15, 2023 08:50:57 p. m.</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@postValuesNulls</a>
+<a class="dropdown-item" href="#">@put</a><a class="dropdown-item" href="#">@postValuesNulls</a><a class="dropdown-item" href="#">@delete</a><a class="dropdown-item" href="#">@getId</a><a class="dropdown-item" href="#">@post</a><a class="dropdown-item" href="#">@getAll</a>
 </ul>
 </li>
 </ul>
@@ -92,7 +92,7 @@
           <div class="test-detail">
             <p class="name">Employees endpoint</p>
             <p class="text-sm">
-              <span>17:53:55</span> / <span>00:00:02:475</span>
+              <span>20:50:58</span> / <span>00:05:06:537</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -101,9 +101,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Employees endpoint</h5>
-<span class='badge badge-success'>09.13.2023 17:53:55</span>
-<span class='badge badge-danger'>09.13.2023 17:53:57</span>
-<span class='badge badge-default'>00:00:02:475</span>
+<span class='badge badge-success'>09.15.2023 20:50:58</span>
+<span class='badge badge-danger'>09.15.2023 20:56:04</span>
+<span class='badge badge-default'>00:05:06:537</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -115,7 +115,167 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>/create should not create an employee</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>/employees should return all the employees</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.getEmployees()">
+                <span>Given I perform a GET to the employees endpoint</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyStatusCode(int)">
+                <span>Then I verify status code 200 is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyResponseSize(int)">
+                <span>And I verify that the body does not have size 0</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="6"><span class="badge log pass-bg mr-2">Pass</span>/create should create an employee</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.postEmployee(io.cucumber.datatable.DataTable)">
+                <span>Given I perform a POST to the create endpoint with the following data</span>
+      <div><table class='markup-table table '><tr><td>Diego</td><td>3500</td><td>26</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyStatusCode(int)">
+                <span>Then I verify status code 200 is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyResponseSize(int)">
+                <span>And I verify that the body does not have size 0</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyEmployeeResponseData(io.cucumber.datatable.DataTable)">
+                <span>And I verify the following data in the body response</span>
+      <div><table class='markup-table table '><tr><td>Diego</td><td>3500</td><td>26</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>/employee/id should return an employee with specific id</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.getWithIdEmployee(java.lang.String)">
+                <span>Given I perform a Get with specific id equal "1" to the employee endpoint</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyStatusCode(int)">
+                <span>Then I verify status code 200 is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyBodyEmployeeResponse(io.cucumber.datatable.DataTable)">
+                <span>And I verify the following data in the all body response</span>
+      <div><table class='markup-table table '><tr><td>1</td><td>Tiger Nixon</td><td>320800</td><td>61</td><td></td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String)">
+                <span>And I verify the message that says "Successfully! Record has been fetched."</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="16"><span class="badge log pass-bg mr-2">Pass</span>/update should return an employee update with specific id</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.putEmployee(java.lang.String,io.cucumber.datatable.DataTable)">
+                <span>Given I perform a PUT to the update endpoint with the following date and id "2"</span>
+      <div><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyStatusCode(int)">
+                <span>Then I verify status code 200 is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyEmployeeResponseData(io.cucumber.datatable.DataTable)">
+                <span>And I verify the following data in the body response</span>
+      <div><table class='markup-table table '><tr><td>Carlos</td><td>4000</td><td>28</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String)">
+                <span>And I verify the message that says "Successfully! Record has been updated."</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>/delete should return an employee delete with specific id</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.deleteEmployee(java.lang.String)">
+                <span>Given I perform a Delete with specific id equal "10" to the employee endpoint</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyStatusCode(int)">
+                <span>Then I verify status code 200 is returned</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyNumberDataDeleted(java.lang.String)">
+                <span>And I verify number data deleted equal to "10"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepDefinitions.EmployeesSteps.verifyMessageInBody(java.lang.String)">
+                <span>And I verify the message that says "Successfully! Record has been deleted"</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>/create should not create an employee</div>
       </div>
     </div>
         <div class="collapse">
@@ -168,10 +328,46 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@put</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@put</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:53:02 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='16'>/update should return an employee update with specific id</a>
+<div class="">
+<span class="badge badge-default">Employees endpoint./update should return an employee update with specific id</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
@@ -196,11 +392,155 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>17:53:55 p. m.</td>
+<td>20:55:03 p. m.</td>
 <td>
-<a href="#" class="linked" test-id='1' id='2'>/create should not create an employee</a>
+<a href="#" class="linked" test-id='1' id='26'>/create should not create an employee</a>
 <div class="">
 <span class="badge badge-default">Employees endpoint./create should not create an employee</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@delete</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@delete</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:54:03 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='21'>/delete should return an employee delete with specific id</a>
+<div class="">
+<span class="badge badge-default">Employees endpoint./delete should return an employee delete with specific id</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@getId</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@getId</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:52:01 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>/employee/id should return an employee with specific id</a>
+<div class="">
+<span class="badge badge-default">Employees endpoint./employee/id should return an employee with specific id</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@post</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@post</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:51:00 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='6'>/create should create an employee</a>
+<div class="">
+<span class="badge badge-default">Employees endpoint./create should create an employee</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@getAll</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@getAll</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>20:50:58 p. m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>/employees should return all the employees</a>
+<div class="">
+<span class="badge badge-default">Employees endpoint./employees should return all the employees</span>
 </div>
 </td>
 </tr>
@@ -221,13 +561,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>sep. 13, 2023 05:53:54 p. m.</h3>
+<h3>sep. 15, 2023 08:50:57 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>sep. 13, 2023 05:53:57 p. m.</h3>
+<h3>sep. 15, 2023 08:56:04 p. m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -278,7 +618,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>6</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -298,7 +638,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>24</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -317,7 +657,7 @@
 </div></div>
 <script>
 var timeline = {
-"Employees endpoint":2.475
+"Employees endpoint":306.537
 };
 </script>
 <div class="row">
@@ -327,7 +667,47 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
+<td>@put</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
 <td>@postValuesNulls</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@delete</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@getId</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@post</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@getAll</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -348,13 +728,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
+passChild: 6,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 5,
+passGrandChild: 24,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
